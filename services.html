@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Clear AR Services</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root {
+    --primary: #0F172A; --secondary: #1E293B; --accent: #0284C7; --bg: #F8FAFC;
+    --card-bg: #FFFFFF; --text: #334155; --heading: #0F172A; --muted: #64748B; --border: #E2E8F0;
+  }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; }
+  nav { background-color: var(--primary); padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+  .nav-brand { color: #fff; font-weight: 800; font-size: 18px; text-decoration: none; }
+  .nav-links { display: flex; gap: 20px; align-items: center; }
+  .nav-links a { color: #94A3B8; text-decoration: none; font-size: 14px; font-weight: 600; }
+  .nav-links a:hover, .nav-links a.active { color: #38BDF8; }
+  .nav-socials { display: flex; gap: 12px; margin-left: 10px; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 15px; }
+  .nav-socials a { color: #fff; font-size: 15px; }
+  
+  .page-header { background: var(--primary); color: #fff; padding: 60px 20px; text-align: center; }
+  .page-header h1 { margin: 0 0 10px 0; font-size: 36px; }
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+  
+  .service-detail { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 40px; margin: 40px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.02); display: flex; gap: 30px; align-items: center; flex-wrap: wrap; }
+  .service-text { flex: 1; min-width: 280px; }
+  .service-text h2 { color: var(--heading); margin-top: 0; font-size: 24px; }
+  .service-text p { color: var(--muted); }
+  .service-img { flex: 1; min-width: 280px; height: 240px; border-radius: 8px; background-size: cover; background-position: center; }
+  
+  footer { background-color: var(--primary); color: #94A3B8; text-align: center; padding: 40px 20px; margin-top: 60px; }
+  .footer-socials { margin-bottom: 15px; }
+  .footer-socials a { color: #fff; background: rgba(255,255,255,0.05); width: 36px; height: 36px; display: inline-flex; justify-content: center; align-items: center; border-radius: 50%; margin: 0 8px; text-decoration: none; }
+  footer p { margin: 0; font-size: 14px; }
+</style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-brand">Clear AR Services</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="pricing.html">Pricing & FAQs</a>
+      <a href="contact.html">Contact Us</a>
+      <div class="nav-socials">
+        <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Our Professional Services</h1>
+      <p>Targeted solutions designed to eliminate revenue leakage and secure correct payer reimbursement.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="service-detail">
+      <div class="service-text">
+        <h2>90+ Day Accounts Receivable Recovery</h2>
+        <p>Aged accounts sitting past 90 days are prone to write-offs due to timely filing limits or unaddressed payer friction. We deploy systematic follow-up workflows, manage appeals, and directly escalate technical denials to recover trapped revenue for your clinic.</p>
+      </div>
+      <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80');"></div>
+    </div>
+
+    <div class="service-detail">
+      <div class="service-text">
+        <h2>Surgical Claims & Medical Record Auditing</h2>
+        <p>Complex claims require thorough clinical review. We execute deep-dive root cause audits of lengthy hospital notes and operative reports to spot coding discrepancies, ensure documentation alignment, and protect your practice from future compliance audits.</p>
+      </div>
+      <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80');"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-socials">
+        <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="mailto:info@cleararservices.com"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+      <p>&copy; 2026 Clear AR Services. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
