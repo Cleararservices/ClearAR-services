@@ -4,147 +4,125 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Clear AR Services | Medical Claims Auditing & AR Recovery</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
   :root {
-    --primary: #0B192C;
-    --secondary: #1E3E62;
-    --accent: #38BDF8;
-    --bg: #F8F9FA;
-    --text: #333333;
-    --muted: #4B5563;
+    --primary: #0F172A;
+    --secondary: #1E293B;
+    --accent: #0284C7;
+    --accent-hover: #0369A1;
+    --bg: #F8FAFC;
+    --card-bg: #FFFFFF;
+    --text: #334155;
+    --heading: #0F172A;
+    --muted: #64748B;
+    --border: #E2E8F0;
   }
+  * { box-sizing: border-box; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--bg);
-    color: var(--text);
+    margin: 0; padding: 0; background-color: var(--bg); color: var(--text); line-height: 1.6;
   }
-  header {
+  /* Navbar */
+  nav {
     background-color: var(--primary);
-    color: #ffffff;
-    padding: 80px 20px;
-    text-align: center;
-  }
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  h1 {
-    font-size: 38px;
-    margin-bottom: 15px;
-    font-weight: 800;
-  }
-  .subtitle {
-    font-size: 20px;
-    color: #94A3B8;
-    max-width: 750px;
-    margin: 0 auto 25px auto;
-    line-height: 1.5;
-  }
-  .badge {
-    display: inline-block;
-    background-color: var(--secondary);
-    color: var(--accent);
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 600;
-  }
-  .main-content {
-    padding: 60px 20px;
-  }
-  .grid {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 15px 30px;
     display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; top: 0; z-index: 1000;
   }
-  .card {
-    flex: 1;
-    min-width: 300px;
-    background: #ffffff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.04);
-    border-top: 4px solid var(--primary);
-  }
-  .card h3 {
-    margin-top: 0;
-    color: var(--primary);
-    font-size: 22px;
-  }
-  .card p {
-    color: var(--muted);
-    line-height: 1.6;
-    font-size: 16px;
-  }
-  .cta-section {
-    background: #ffffff;
-    padding: 50px 20px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.04);
-  }
-  .cta-section p {
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--primary);
-    margin-bottom: 25px;
-  }
-  .btn {
-    display: inline-block;
-    background-color: var(--primary);
+  .nav-brand { color: #fff; font-weight: 800; font-size: 18px; text-decoration: none; }
+  .nav-links { display: flex; gap: 20px; align-items: center; }
+  .nav-links a { color: #94A3B8; text-decoration: none; font-size: 14px; font-weight: 600; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: #38BDF8; }
+  .nav-socials { display: flex; gap: 12px; margin-left: 10px; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 15px; }
+  .nav-socials a { color: #fff; font-size: 15px; }
+
+  /* Hero with Professional Imagery */
+  .hero {
+    background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(30, 41, 59, 0.85)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
     color: #ffffff;
-    padding: 16px 32px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    transition: background-color 0.2s;
-  }
-  .btn:hover {
-    background-color: var(--secondary);
-  }
-  footer {
+    padding: 100px 20px;
     text-align: center;
-    padding: 30px;
-    color: var(--muted);
-    font-size: 14px;
   }
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+  h1 { font-size: 44px; margin-bottom: 15px; font-weight: 800; letter-spacing: -0.5px; }
+  .subtitle { font-size: 20px; color: #94A3B8; max-width: 700px; margin: 0 auto 30px auto; }
+  .btn-primary {
+    display: inline-block; background-color: var(--accent); color: #fff; padding: 14px 28px;
+    border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px; transition: background 0.2s;
+  }
+  .btn-primary:hover { background-color: var(--accent-hover); }
+
+  /* Overview Cards */
+  .main-content { padding: 60px 20px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 40px; }
+  .card {
+    background: var(--card-bg); padding: 40px 30px; border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); border: 1px solid var(--border);
+  }
+  .card i { font-size: 36px; color: var(--accent); margin-bottom: 20px; }
+  .card h3 { margin-top: 0; color: var(--heading); font-size: 22px; margin-bottom: 15px; }
+  .card p { color: var(--muted); font-size: 15px; margin: 0; }
+
+  /* Footer */
+  footer { background-color: var(--primary); color: #94A3B8; text-align: center; padding: 40px 20px; margin-top: 60px; }
+  .footer-socials { margin-bottom: 15px; }
+  .footer-socials a { color: #fff; background: rgba(255,255,255,0.05); width: 36px; height: 36px; display: inline-flex; justify-content: center; align-items: center; border-radius: 50%; margin: 0 8px; text-decoration: none; }
+  .footer-socials a:hover { background: var(--accent); }
+  footer p { margin: 0; font-size: 14px; }
 </style>
 </head>
 <body>
 
-  <header>
-    <div class="container">
-      <h1>Clear AR Services</h1>
-      <p class="subtitle">Recovering Trapped Revenue & 90+ Day Technical Denials for Independent US Medical Practices.</p>
-      <div class="badge">Contingency-Based Model: Paid Only on Successful Recovery</div>
+  <nav>
+    <a href="index.html" class="nav-brand">Clear AR Services</a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing & FAQs</a>
+      <a href="contact.html">Contact Us</a>
+      <div class="nav-socials">
+        <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
     </div>
-  </header>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Recovering Trapped Revenue for Independent Practices</h1>
+      <p class="subtitle">Specialized 90+ day accounts receivable recovery and clinical claims auditing backed by deep-dive root cause analysis.</p>
+      <a href="contact.html" class="btn-primary">Request an AR Audit</a>
+    </div>
+  </section>
 
   <div class="container main-content">
     <div class="grid">
       <div class="card">
+        <i class="fa-solid fa-chart-line"></i>
         <h3>90+ Day AR Recovery</h3>
-        <p>Aggressive, systematic tracking and direct payer escalation to pull aged accounts out of write-off status and back into your practice bank account.</p>
+        <p>Systematic tracking and direct payer escalation to pull aged accounts out of write-off status and back into your practice bank account.</p>
       </div>
       <div class="card">
+        <i class="fa-solid fa-file-medical-alt"></i>
         <h3>Surgical Claims Auditing</h3>
-        <p>Deep-dive root cause analysis of complex hospital notes and clinical records to eliminate recurring coding errors before final submission.</p>
+        <p>Rigorous evaluation of complex medical records and hospital billing notes to eliminate recurring coding errors before submission.</p>
       </div>
-    </div>
-
-    <div class="cta-section">
-      <p>Stop letting aged claims drain your practice's bottom line.</p>
-      <a href="mailto:info@cleararservices.com" class="btn">Request an AR Audit</a>
     </div>
   </div>
 
   <footer>
-    &copy; 2026 Clear AR Services. All rights reserved.
+    <div class="container">
+      <div class="footer-socials">
+        <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="mailto:info@cleararservices.com"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+      <p>&copy; 2026 Clear AR Services. All rights reserved.</p>
+    </div>
   </footer>
 
 </body>
