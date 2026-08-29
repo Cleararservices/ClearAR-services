@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services | Clear AR Services</title>
+<title>Services & Specialties | Clear AR Services</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
   :root {
@@ -20,21 +20,31 @@
   .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 15px; font-weight: 500; }
   .nav-links a:hover, .nav-links a.active { color: var(--accent); }
   .nav-socials { display: flex; gap: 15px; margin-left: 15px; border-left: 1px solid var(--border-color); padding-left: 20px; }
-  .nav-socials a { color: #fff; background: rgba(255,255,255,0.05); width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .nav-socials a { color: #fff; background: rgba(255,255,255,0.05); width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; }
 
   .page-header { padding: 90px 20px 50px 20px; text-align: center; background: radial-gradient(circle at center, rgba(14,165,233,0.15) 0%, transparent 70%); }
   .page-header h1 { font-size: 42px; font-weight: 800; margin: 0 0 15px 0; }
-  .page-header p { color: var(--text-muted); font-size: 18px; max-width: 600px; margin: 0 auto; }
+  .page-header p { color: var(--text-muted); font-size: 18px; max-width: 650px; margin: 0 auto; }
 
   .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+  
   .service-card {
     background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 50px;
     margin: 40px 0; display: flex; gap: 40px; align-items: center; flex-wrap: wrap; box-shadow: 0 15px 30px rgba(0,0,0,0.3);
   }
   .service-info { flex: 1; min-width: 280px; }
   .service-info h2 { font-size: 28px; font-weight: 700; margin: 0 0 15px 0; color: #fff; }
-  .service-info p { color: var(--text-muted); font-size: 16px; margin: 0; line-height: 1.7; }
-  .service-image { flex: 1; min-width: 280px; height: 260px; border-radius: 12px; background-size: cover; background-position: center; border: 1px solid var(--border-color); }
+  .service-info p { color: var(--text-muted); font-size: 16px; margin: 0 0 20px 0; line-height: 1.7; }
+  .service-image { flex: 1; min-width: 280px; height: 280px; border-radius: 12px; background-size: cover; background-position: center; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
+  /* Specialties Grid Section */
+  .specialties-section { margin: 80px 0; padding: 40px 0; }
+  .specialties-section h2 { text-align: center; font-size: 32px; font-weight: 800; margin-bottom: 10px; }
+  .specialties-section > p { text-align: center; color: var(--text-muted); margin-bottom: 40px; }
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .spec-card { background: var(--bg-card); border: 1px solid var(--border-color); padding: 30px; border-radius: 12px; }
+  .spec-card h4 { color: var(--accent); font-size: 18px; margin: 0 0 10px 0; }
+  .spec-card p { color: var(--text-muted); font-size: 14px; margin: 0; }
 
   footer { background: #040812; border-top: 1px solid var(--border-color); padding: 50px 20px; text-align: center; color: var(--text-muted); margin-top: 80px; }
   .footer-socials { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; }
@@ -52,16 +62,16 @@
       <a href="pricing.html">Pricing & FAQs</a>
       <a href="contact.html">Contact Us</a>
       <div class="nav-socials">
-        <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/in/kiran-kumar-bc" target="_blank"><title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/Cleararservices" target="_blank"><title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
       </div>
     </div>
   </nav>
 
   <div class="page-header">
     <div class="container">
-      <h1>Specialized Practice Solutions</h1>
-      <p>Precision-engineered workflows built to eliminate claim bottlenecks and secure full financial reimbursement.</p>
+      <h1>Comprehensive Claims Solutions</h1>
+      <p>Precision-engineered audit and recovery services tailored for independent healthcare providers, surgical centers, and clinics.</p>
     </div>
   </div>
 
@@ -69,25 +79,46 @@
     <div class="service-card">
       <div class="service-info">
         <h2>90+ Day Accounts Receivable Recovery</h2>
-        <p>Aged accounts sitting past 90 days face high risk of write-offs due to timely filing limits or complex payer friction. We deploy systematic follow-up tracks, manage appeals, and directly escalate technical denials to recover trapped revenue.</p>
+        <p>Aged accounts sitting past 90 days face high write-off risks due to timely filing limits and unresponsive payers. We deploy systematic multi-channel escalation workflows, manage formal appeals, and directly recover trapped revenue for your practice.</p>
+        <p><strong style="color:#fff;">Target Audience:</strong> Independent medical clinics, multi-specialty medical practices, and outpatient surgical facilities struggling with aged insurance backlogs.</p>
       </div>
       <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80');"></div>
     </div>
 
     <div class="service-card">
       <div class="service-info">
-        <h2>Surgical Claims & Record Auditing</h2>
-        <p>Complex medical procedures demand exhaustive clinical review. We perform thorough root-hunt audits of detailed hospital notes and operative charts to spot hidden coding mistakes, ensure documentation compliance, and protect your practice.</p>
+        <h2>Surgical Claims & Clinical Record Auditing</h2>
+        <p>Complex medical procedures require exhaustive clinical documentation review. We perform thorough root-cause audits of lengthy hospital charts and operative notes to uncover hidden coding discrepancies, verify modifier usage, and ensure complete reimbursement compliance.</p>
+        <p><strong style="color:#fff;">Target Audience:</strong> Surgical centers, orthopedic practices, cardiology groups, and specialty clinics managing high-value, document-heavy claims.</p>
       </div>
       <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80');"></div>
+    </div>
+
+    <div class="specialties-section">
+      <h2>Medical Specialties We Serve</h2>
+      <p>Our claims auditing expertise adapts seamlessly to diverse clinical environments.</p>
+      <div class="spec-grid">
+        <div class="spec-card">
+          <h4>Orthopedic & Spine Surgery</h4>
+          <p>Auditing complex operative reports, implant invoicing documentation, and multi-code surgical bundles.</p>
+        </div>
+        <div class="spec-card">
+          <h4>Cardiovascular & Interventional</h4>
+          <p>Resolving technical denials involving catheterizations, diagnostic imaging, and vascular procedures.</p>
+        </div>
+        <div class="spec-card">
+          <h4>General Surgery & Outpatient</h4>
+          <p>Ensuring accurate modifier application and tackling delayed prior-authorization technical denials.</p>
+        </div>
+      </div>
     </div>
   </div>
 
   <footer>
     <div class="container">
       <div class="footer-socials">
-        <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/in/kiran-kumar-bc" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/Cleararservices" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="mailto:info@cleararservices.com"><i class="fa-solid fa-envelope"></i></a>
       </div>
       <p>&copy; 2026 Clear AR Services. All rights reserved.</p>
