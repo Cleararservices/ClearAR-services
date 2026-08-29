@@ -20,22 +20,37 @@
   .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 15px; font-weight: 500; }
   .nav-links a:hover, .nav-links a.active { color: var(--accent); }
   .nav-socials { display: flex; gap: 15px; margin-left: 15px; border-left: 1px solid var(--border-color); padding-left: 20px; }
-  .nav-socials a { color: #fff; background: rgba(255,255,255,0.05); width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .nav-socials a { color: #fff; background: rgba(255,255,255,0.05); width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; }
 
   .page-header { padding: 90px 20px 50px 20px; text-align: center; background: radial-gradient(circle at center, rgba(14,165,233,0.15) 0%, transparent 70%); }
   .page-header h1 { font-size: 42px; font-weight: 800; margin: 0 0 15px 0; }
-  .page-header p { color: var(--text-muted); font-size: 18px; max-width: 600px; margin: 0 auto; }
+  .page-header p { color: var(--text-muted); font-size: 18px; max-width: 650px; margin: 0 auto; }
 
-  .container { max-width: 700px; margin: 0 auto; padding: 0 20px; }
+  .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
   
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; margin: 40px 0 80px 0; align-items: start; }
+  @media(max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+
+  .contact-info-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; padding: 40px; }
+  .contact-info-card h3 { font-size: 22px; margin-top: 0; color: #fff; margin-bottom: 20px; }
+  .info-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 25px; }
+  .info-item i { font-size: 20px; color: var(--accent); margin-top: 3px; }
+  .info-item div h4 { margin: 0 0 5px 0; font-size: 15px; color: #fff; }
+  .info-item div p, .info-item div a { margin: 0; color: var(--text-muted); font-size: 14px; text-decoration: none; }
+  .info-item div a:hover { color: var(--accent); }
+
+  .social-buttons { display: flex; gap: 12px; margin-top: 30px; }
+  .social-btn { flex: 1; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: #fff; padding: 12px; border-radius: 10px; text-align: center; text-decoration: none; font-weight: 600; font-size: 14px; transition: background 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .social-btn:hover { background: var(--accent); }
+
   .contact-box {
-    background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; padding: 50px;
-    margin: 40px 0; box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; padding: 40px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
   }
-  .form-group { margin-bottom: 25px; }
+  .form-group { margin-bottom: 20px; }
   .form-group label { display: block; font-weight: 600; font-size: 14px; color: #fff; margin-bottom: 8px; }
   .form-group input, .form-group textarea {
-    width: 100%; padding: 15px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color);
+    width: 100%; padding: 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color);
     border-radius: 10px; color: #fff; font-size: 15px; transition: border-color 0.2s;
   }
   .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); }
@@ -45,9 +60,6 @@
     box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
   }
   .btn-submit:hover { background: #0284C7; }
-
-  .direct-info { text-align: center; margin-top: 30px; color: var(--text-muted); font-size: 15px; }
-  .direct-info a { color: var(--accent); text-decoration: none; font-weight: 600; }
 
   footer { background: #040812; border-top: 1px solid var(--border-color); padding: 50px 20px; text-align: center; color: var(--text-muted); margin-top: 80px; }
   .footer-socials { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; }
@@ -65,48 +77,81 @@
       <a href="pricing.html">Pricing & FAQs</a>
       <a href="contact.html" class="active">Contact Us</a>
       <div class="nav-socials">
-        <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/in/kiran-kumar-bc" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/Cleararservices" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
       </div>
     </div>
   </nav>
 
   <div class="page-header">
-    <div class="container">
-      <h1>Connect With Our Team</h1>
-      <p>Initiate your confidential AR audit consultation today.</p>
+    <div class="container" style="max-width:800px;">
+      <h1>Connect With Our Experts</h1>
+      <p>Initiate your confidential AR audit consultation or reach out through our official communication channels.</p>
     </div>
   </div>
 
-  <div class="container">
-    <div class="contact-box">
-      <form action="mailto:info@cleararservices.com" method="POST" enctype="text/plain">
-        <div class="form-group">
-          <label>Practice / Clinic Name</label>
-          <input type="text" name="Practice_Name" placeholder="e.g., Metro Medical Clinic" required>
+  <div class="container" style="max-width: 1000px;">
+    <div class="contact-grid">
+      
+      <div class="contact-info-card">
+        <h3>Direct Channels</h3>
+        
+        <div class="info-item">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <h4>Email Inquiry</h4>
+            <a href="mailto:info@cleararservices.com">info@cleararservices.com</a>
+          </div>
         </div>
-        <div class="form-group">
-          <label>Contact Email</label>
-          <input type="email" name="Email" placeholder="name@practice.com" required>
-        </div>
-        <div class="form-group">
-          <label>AR Backlog & Denials Overview</label>
-          <textarea name="Message" rows="4" placeholder="Briefly describe your 90+ day volume or claim challenges..."></textarea>
-        </div>
-        <button type="submit" class="btn-submit">Submit Audit Request</button>
-      </form>
-    </div>
 
-    <div class="direct-info">
-      <p>Prefer direct communication? Email us anytime at <a href="mailto:info@cleararservices.com">info@cleararservices.com</a> or connect via our LinkedIn and Facebook links above.</p>
+        <div class="info-item">
+          <i class="fa-solid fa-user-tie"></i>
+          <div>
+            <h4>Lead Consultant</h4>
+            <p>Kiran Kumar BC</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <i class="fa-solid fa-network-wired"></i>
+          <div>
+            <h4>Professional Networks</h4>
+            <p>Connect across our verified platforms below.</p>
+          </div>
+        </div>
+
+        <div class="social-buttons">
+          <a href="https://www.linkedin.com/in/kiran-kumar-bc" target="_blank" class="social-btn"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+          <a href="https://www.facebook.com/Cleararservices" target="_blank" class="social-btn"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+        </div>
+      </div>
+
+      <div class="contact-box">
+        <form action="mailto:info@cleararservices.com" method="POST" enctype="text/plain">
+          <div class="form-group">
+            <label>Practice / Clinic Name</label>
+            <input type="text" name="Practice_Name" placeholder="e.g., Metro Medical Clinic" required>
+          </div>
+          <div class="form-group">
+            <label>Contact Email</label>
+            <input type="email" name="Email" placeholder="name@practice.com" required>
+          </div>
+          <div class="form-group">
+            <label>AR Backlog & Audit Details</label>
+            <textarea name="Message" rows="4" placeholder="Briefly describe your 90+ day volume or claim challenges..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Submit Audit Request</button>
+        </form>
+      </div>
+
     </div>
   </div>
 
   <footer>
-    <div class="container">
+    <div class="container" style="max-width:800px;">
       <div class="footer-socials">
-        <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/in/kiran-kumar-bc" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/Cleararservices" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="mailto:info@cleararservices.com"><i class="fa-solid fa-envelope"></i></a>
       </div>
       <p>&copy; 2026 Clear AR Services. All rights reserved.</p>
