@@ -39,6 +39,10 @@
   .info-item div p, .info-item div a { margin: 0; color: var(--text-muted); font-size: 14px; text-decoration: none; }
   .info-item div a:hover { color: var(--accent); }
 
+  .social-buttons { display: flex; gap: 12px; margin-top: 30px; }
+  .social-btn { flex: 1; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: #fff; padding: 12px; border-radius: 10px; text-align: center; text-decoration: none; font-weight: 600; font-size: 14px; transition: background 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .social-btn:hover { background: var(--accent); }
+
   .contact-box {
     background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; padding: 40px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.3);
@@ -72,9 +76,6 @@
       <a href="services.html">Services</a>
       <a href="pricing.html">Pricing & FAQs</a>
       <a href="contact.html" class="active">Contact Us</a>
-      <div class="nav-socials">
-        <a href="https://www.facebook.com/profile.php?id=61593741880144" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-      </div>
     </div>
   </nav>
 
@@ -114,6 +115,11 @@
             <p>HIPAA Compliant, BAA Protected, Solo-Operator Model[cite: 1, 4].</p>
           </div>
         </div>
+
+        <div class="social-buttons">
+          <a href="https://www.linkedin.com/in/kiran-kumar-bc" target="_blank" class="social-btn"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+          <a href="https://www.facebook.com/profile.php?id=100038900269769" target="_blank" class="social-btn"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+        </div>
       </div>
 
       <div class="contact-box">
@@ -142,7 +148,6 @@
   <footer>
     <div class="container">
       <div class="footer-socials">
-        <a href="https://www.facebook.com/profile.php?id=61593741880144" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="mailto:kiran@cleararservices.com"><i class="fa-solid fa-envelope"></i></a>
       </div>
       <p>&copy; 2026 Clear AR Services. All rights reserved.</p>
