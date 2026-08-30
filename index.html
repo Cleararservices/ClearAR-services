@@ -3,81 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clear AR Services | Medical Claims Auditing & AR Recovery</title>
+<title>Clear AR Services | Independent US Healthcare A/R Recovery</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
   :root {
-    --bg-dark: #070F1E;
-    --bg-card: #0F172A;
-    --accent: #0EA5E9;
-    --accent-glow: rgba(14, 165, 233, 0.4);
-    --text-main: #F8FAFC;
-    --text-muted: #94A3B8;
-    --border-color: rgba(255, 255, 255, 0.08);
+    --bg-dark: #070F1E; --bg-card: #0F172A; --accent: #0EA5E9;
+    --text-main: #F8FAFC; --text-muted: #94A3B8; --border-color: rgba(255, 255, 255, 0.08);
   }
   * { box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; background: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
   
-  nav {
-    background: rgba(7, 15, 30, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color);
-    padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000;
-  }
+  nav { background: rgba(7, 15, 30, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
   .nav-brand { color: #fff; font-weight: 800; font-size: 20px; text-decoration: none; display: flex; align-items: center; gap: 10px; }
   .nav-brand i { color: var(--accent); }
   .nav-links { display: flex; gap: 25px; align-items: center; }
-  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.2s; }
+  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 15px; font-weight: 500; }
   .nav-links a:hover, .nav-links a.active { color: var(--accent); }
   .nav-socials { display: flex; gap: 15px; margin-left: 15px; border-left: 1px solid var(--border-color); padding-left: 20px; }
-  .nav-socials a { color: #fff; background: rgba(255,255,255,0.05); width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; transition: background 0.2s; text-decoration: none; }
-  .nav-socials a:hover { background: var(--accent); }
+  .nav-socials a { color: #fff; background: rgba(255,255,255,0.05); width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; }
 
-  .hero {
-    background: linear-gradient(135deg, rgba(7,15,30,0.90) 0%, rgba(15,23,42,0.80) 100%), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-    padding: 140px 20px 120px 20px; text-align: center; position: relative; overflow: hidden;
-  }
-  .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2; }
-  .hero-tag {
-    display: inline-flex; align-items: center; gap: 8px; background: rgba(14, 165, 233, 0.1); color: var(--accent);
-    border: 1px solid rgba(14, 165, 233, 0.3); padding: 8px 18px; border-radius: 50px; font-size: 13px; font-weight: 600; margin-bottom: 25px;
-    box-shadow: 0 0 20px var(--accent-glow);
-  }
-  h1 { font-size: 52px; margin: 0 0 20px 0; font-weight: 800; letter-spacing: -1px; line-height: 1.1; }
-  .subtitle { font-size: 20px; color: var(--text-muted); max-width: 750px; margin: 0 auto 35px auto; font-weight: 400; }
-  .btn-glow {
-    display: inline-block; background: var(--accent); color: #fff; padding: 16px 36px; border-radius: 8px;
-    text-decoration: none; font-weight: 700; font-size: 16px; box-shadow: 0 0 25px var(--accent-glow); transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .btn-glow:hover { transform: translateY(-2px); box-shadow: 0 0 35px var(--accent); }
-
-  .section-padding { padding: 90px 20px; }
-  .section-title { text-align: center; font-size: 36px; font-weight: 800; margin-bottom: 15px; }
-  .section-subtitle { text-align: center; color: var(--text-muted); font-size: 17px; max-width: 650px; margin: 0 auto 60px auto; }
+  .hero { padding: 100px 20px 80px 20px; text-align: center; background: radial-gradient(circle at center, rgba(14,165,233,0.15) 0%, transparent 70%); }
+  .hero h1 { font-size: 48px; font-weight: 800; max-width: 900px; margin: 0 auto 20px auto; letter-spacing: -0.5px; }
+  .hero h1 span { color: var(--accent); }
+  .hero p { font-size: 19px; color: var(--text-muted); max-width: 700px; margin: 0 auto 40px auto; }
+  .hero-btns { display: flex; justify-content: center; gap: 15px; }
   
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-  .card {
-    background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 45px 35px;
-    transition: transform 0.3s, border-color 0.3s; position: relative; overflow: hidden;
-  }
-  .card:hover { transform: translateY(-8px); border-color: rgba(14, 165, 233, 0.4); }
-  .card-icon {
-    width: 60px; height: 60px; background: rgba(14, 165, 233, 0.1); border-radius: 12px; display: flex;
-    align-items: center; justify-content: center; font-size: 24px; color: var(--accent); margin-bottom: 25px;
-  }
-  .card h3 { font-size: 24px; margin: 0 0 15px 0; font-weight: 700; }
-  .card p { color: var(--text-muted); font-size: 15px; margin: 0; line-height: 1.7; }
+  .btn-primary { background: var(--accent); color: #fff; padding: 16px 32px; border-radius: 10px; font-weight: 700; text-decoration: none; box-shadow: 0 0 20px rgba(14, 165, 233, 0.3); transition: background 0.2s; }
+  .btn-primary:hover { background: #0284C7; }
+  .btn-secondary { background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: #fff; padding: 16px 32px; border-radius: 10px; font-weight: 700; text-decoration: none; transition: background 0.2s; }
+  .btn-secondary:hover { background: rgba(255,255,255,0.1); }
 
-  /* Why Choose Us & Background Section */
-  .why-section { background: rgba(15, 23, 42, 0.5); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
-  .why-grid { display: flex; gap: 50px; align-items: center; flex-wrap: wrap; }
-  .why-text { flex: 1; min-width: 300px; }
-  .why-text h2 { font-size: 36px; font-weight: 800; margin-bottom: 20px; }
-  .why-text p { color: var(--text-muted); font-size: 16px; margin-bottom: 20px; line-height: 1.7; }
-  .why-image { flex: 1; min-width: 300px; height: 380px; border-radius: 16px; background: url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat; border: 1px solid var(--border-color); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 60px 0; }
+  @media(max-width: 768px) { .grid-3 { grid-template-columns: 1fr; } }
+  
+  .card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; padding: 35px; }
+  .card i { font-size: 32px; color: var(--accent); margin-bottom: 20px; display: block; }
+  .card h3 { font-size: 20px; margin: 0 0 12px 0; color: #fff; }
+  .card p { color: var(--text-muted); font-size: 15px; margin: 0; }
 
-  footer { background: #040812; border-top: 1px solid var(--border-color); padding: 50px 20px; text-align: center; color: var(--text-muted); }
+  footer { background: #040812; border-top: 1px solid var(--border-color); padding: 50px 20px; text-align: center; color: var(--text-muted); margin-top: 80px; }
   .footer-socials { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; }
-  .footer-socials a { color: #fff; background: rgba(255,255,255,0.05); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: background 0.2s; }
-  .footer-socials a:hover { background: var(--accent); }
+  .footer-socials a { color: #fff; background: rgba(255,255,255,0.05); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; }
   footer p { margin: 0; font-size: 14px; }
 </style>
 </head>
@@ -91,53 +59,42 @@
       <a href="pricing.html">Pricing & FAQs</a>
       <a href="contact.html">Contact Us</a>
       <div class="nav-socials">
-        <a href="https://www.linkedin.com/in/kiran-kumar-bc" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://www.facebook.com/Cleararservices" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/in/kiran-kumar-bc" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/Cleararservices" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
       </div>
     </div>
   </nav>
 
   <section class="hero">
     <div class="container">
-      <div class="hero-tag"><i class="fa-solid fa-circle-check"></i> 100% Contingency-Based Revenue Recovery</div>
-      <h1>Recovering Trapped Revenue for Independent US Practices</h1>
-      <p class="subtitle">Led by expert claims recovery specialist Kiran Kumar BC, we deliver aggressive 90+ day accounts receivable escalation and clinical root-cause auditing to protect your bottom line.</p>
-      <a href="contact.html" class="btn-glow">Request an AR Audit</a>
+      <h1>Recover Lost Healthcare Revenue From Your <span>90+ Day Aged Claims</span></h1>
+      <p>Independent US healthcare A/R consultancy led by Kiran Kumar BC, MSc. Specialized manual technical appeals, zero upfront fees, and strict HIPAA compliance.</p>
+      <div class="hero-btns">
+        <a href="contact.html" class="btn-primary">Request Free Audit</a>
+        <a href="services.html" class="btn-secondary">Explore Services</a>
+      </div>
     </div>
   </section>
 
-  <div class="container section-padding">
-    <h2 class="section-title">Core Expertise & Solutions</h2>
-    <p class="section-subtitle">We deploy rigorous data-driven workflows to address complex hospital claims and aged balances.</p>
-    
-    <div class="grid">
+  <div class="container">
+    <div class="grid-3">
       <div class="card">
-        <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
-        <h3>90+ Day AR Recovery</h3>
-        <p>Systematic multi-channel tracking and aggressive payer escalation to pull aged accounts out of write-off status and recover cash directly into your practice bank account.</p>
+        <i class="fa-solid fa-microscope"></i>
+        <h3>MSc Clinical Literacy</h3>
+        <p>Armed with an MSc in Biotechnology, complex surgical notes and medical policies are translated into airtight clinical appeals that medical directors cannot dismiss.</p>
       </div>
       <div class="card">
-        <div class="card-icon"><i class="fa-solid fa-file-medical"></i></div>
-        <h3>Surgical Claims Auditing</h3>
-        <p>Deep-dive root cause analysis of complex hospital notes, operative records, and clinical documentation to eliminate recurring technical errors before final submission.</p>
+        <i class="fa-solid fa-user-shield"></i>
+        <h3>Solo-Operator Security</h3>
+        <p>Zero offshore teams or generic software scripts. Your patient data is handled exclusively by Kiran Kumar BC under a strict BAA and zero data export protocol[cite: 1, 4].</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-handshake-angle"></i>
+        <h3>Win-Win Contingency</h3>
+        <p>Zero upfront retainers[cite: 4]. Compensation is strictly performance-based—earned only when your recovered revenue is deposited back into your practice[cite: 4].</p>
       </div>
     </div>
   </div>
-
-  <section class="why-section section-padding">
-    <div class="container">
-      <div class="why-grid">
-        <div class="why-text">
-          <h2>Why Partner With Clear AR Services & Kiran Kumar BC?</h2>
-          <p>Navigating multi-page hospital notes, intricate billing guidelines, and uncooperative insurance payers drains valuable internal clinic resources. Founded by Kiran Kumar BC, Clear AR Services bridges the gap between complex medical documentation and maximum financial reimbursement.</p>
-          <p>With deep expertise in independent claims auditing, root-cause evaluation, and aged AR collection, we handle the heavy lifting so your medical staff can focus strictly on patient care.</p>
-          <p>Our flexible contingency and client-preference models ensure absolute transparency with zero financial risk.</p>
-          <a href="contact.html" class="btn-glow" style="margin-top: 15px; display: inline-block;">Speak With Kiran Kumar BC</a>
-        </div>
-        <div class="why-image"></div>
-      </div>
-    </div>
-  </section>
 
   <footer>
     <div class="container">
@@ -146,7 +103,7 @@
         <a href="https://www.facebook.com/Cleararservices" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="mailto:info@cleararservices.com"><i class="fa-solid fa-envelope"></i></a>
       </div>
-      <p>&copy; 2026 Clear AR Services. All rights reserved.</p>
+      <p>&copy; 2026 Clear AR Services. Led by Kiran Kumar BC, MSc. All rights reserved.</p>
     </div>
   </footer>
 
