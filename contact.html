@@ -13,71 +13,130 @@
   * { box-sizing: border-box; }
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; background: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
   
-  nav { background: rgba(7, 15, 30, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-  .nav-brand { color: #fff; font-weight: 800; font-size: 20px; text-decoration: none; display: flex; align-items: center; gap: 12px; }
-  .nav-brand img { height: 40px; width: auto; border-radius: 6px; }
-  .nav-links { display: flex; gap: 25px; align-items: center; }
-  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 15px; font-weight: 500; }
-  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
-  .nav-socials { display: flex; gap: 15px; margin-left: 15px; border-left: 1px solid var(--border-color); padding-left: 20px; }
-  .nav-socials a { color: #fff; background: rgba(255,255,255,0.05); width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; }
+  nav { background: rgba(7, 15, 30, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); padding: 14px 24px; position: sticky; top: 0; z-index: 1000; }
+  .nav-inner { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+  .nav-brand { color: #fff; font-weight: 800; font-size: 19px; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+  .nav-brand img { height: 36px; width: auto; border-radius: 6px; }
 
-  .page-header { padding: 90px 20px 50px 20px; text-align: center; background: radial-gradient(circle at center, rgba(14,165,233,0.15) 0%, transparent 70%); }
-  .page-header h1 { font-size: 42px; font-weight: 800; margin: 0 0 15px 0; }
-  .page-header p { color: var(--text-muted); font-size: 18px; max-width: 650px; margin: 0 auto; }
+  /* Desktop Navigation Links */
+  .nav-menu { display: flex; align-items: center; gap: 20px; }
+  .nav-links { display: flex; gap: 20px; align-items: center; }
+  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+  /* Mobile Toggle Icon */
+  .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 22px; cursor: pointer; padding: 4px 8px; }
+
+  .page-header { padding: 70px 20px 40px 20px; text-align: center; background: radial-gradient(circle at center, rgba(14,165,233,0.15) 0%, transparent 70%); }
+  .page-header h1 { font-size: 38px; font-weight: 800; margin: 0 0 15px 0; line-height: 1.2; }
+  .page-header p { color: var(--text-muted); font-size: 17px; max-width: 650px; margin: 0 auto; }
 
   .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
   
-  .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; margin: 40px 0 80px 0; align-items: start; }
-  @media(max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 35px; margin: 40px 0 70px 0; align-items: start; }
 
-  .contact-info-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; padding: 40px; }
-  .contact-info-card h3 { font-size: 22px; margin-top: 0; color: #fff; margin-bottom: 20px; text-align: center; }
-  .info-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 25px; }
-  .info-item i { font-size: 20px; color: var(--accent); margin-top: 3px; }
-  .info-item div h4 { margin: 0 0 5px 0; font-size: 15px; color: #fff; }
-  .info-item div p, .info-item div a { margin: 0; color: var(--text-muted); font-size: 14px; text-decoration: none; }
+  .contact-info-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; padding: 35px; }
+  .contact-info-card h3 { font-size: 21px; margin-top: 0; color: #fff; margin-bottom: 20px; text-align: center; }
+  .info-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 22px; }
+  .info-item i { font-size: 19px; color: var(--accent); margin-top: 3px; }
+  .info-item div h4 { margin: 0 0 4px 0; font-size: 15px; color: #fff; }
+  .info-item div p, .info-item div a { margin: 0; color: var(--text-muted); font-size: 14px; text-decoration: none; word-break: break-word; }
   .info-item div a:hover { color: var(--accent); }
 
-  .social-buttons { display: flex; gap: 12px; margin-top: 30px; }
+  .social-buttons { display: flex; gap: 10px; margin-top: 25px; }
   .social-btn { flex: 1; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: #fff; padding: 12px; border-radius: 10px; text-align: center; text-decoration: none; font-weight: 600; font-size: 14px; transition: background 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
   .social-btn:hover { background: var(--accent); }
 
   .contact-box {
-    background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; padding: 40px;
+    background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; padding: 35px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.3);
   }
-  .form-group { margin-bottom: 20px; }
+  .form-group { margin-bottom: 18px; }
   .form-group label { display: block; font-weight: 600; font-size: 14px; color: #fff; margin-bottom: 8px; }
   .form-group input, .form-group textarea {
-    width: 100%; padding: 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color);
+    width: 100%; padding: 13px 15px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color);
     border-radius: 10px; color: #fff; font-size: 15px; transition: border-color 0.2s;
   }
   .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); }
   .btn-submit {
-    display: block; width: 100%; background: var(--accent); color: #fff; padding: 16px; border: none;
+    display: block; width: 100%; background: var(--accent); color: #fff; padding: 15px; border: none;
     border-radius: 10px; font-weight: 700; font-size: 16px; cursor: pointer; transition: background 0.2s, box-shadow 0.2s;
     box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
   }
   .btn-submit:hover { background: #0284C7; }
 
-  footer { background: #040812; border-top: 1px solid var(--border-color); padding: 50px 20px; text-align: center; color: var(--text-muted); margin-top: 80px; }
-  .footer-socials { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; }
-  .footer-socials a { color: #fff; background: rgba(255,255,255,0.05); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; }
-  footer p { margin: 0; font-size: 14px; }
+  footer { background: #040812; border-top: 1px solid var(--border-color); padding: 40px 20px; text-align: center; color: var(--text-muted); margin-top: 60px; }
+  .footer-socials { display: flex; justify-content: center; gap: 14px; margin-bottom: 16px; }
+  .footer-socials a { color: #fff; background: rgba(255,255,255,0.05); width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; }
+  footer p { margin: 0; font-size: 13px; }
+
+  /* Mobile Breakpoint */
+  @media (max-width: 768px) {
+    .nav-toggle { display: block; }
+    
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background: #0B1426;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border-color);
+      gap: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    .nav-menu.open { display: flex; }
+    
+    .nav-links {
+      flex-direction: column;
+      width: 100%;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .nav-links a { font-size: 17px; width: 100%; padding: 4px 0; }
+
+    .page-header { padding: 45px 16px 30px 16px; }
+    .page-header h1 { font-size: 28px; }
+    .page-header p { font-size: 15px; }
+
+    .contact-grid {
+      grid-template-columns: 1fr;
+      margin: 25px 0 50px 0;
+      gap: 25px;
+    }
+
+    .contact-info-card, .contact-box {
+      padding: 22px 18px;
+      border-radius: 16px;
+    }
+
+    .social-buttons {
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
 </style>
 </head>
 <body>
 
   <nav>
-    <a href="index.html" class="nav-brand">
-      <img src="logo.jpeg" alt="Clear AR Services"> Clear AR Services
-    </a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="pricing.html">Pricing & FAQs</a>
-      <a href="contact.html" class="active">Contact Us</a>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="logo.jpeg" alt="Clear AR Services"> Clear AR Services
+      </a>
+      <button class="nav-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <i class="fa-solid fa-bars" id="toggleIcon"></i>
+      </button>
+      <div class="nav-menu" id="navMenu">
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="pricing.html">Pricing & FAQs</a>
+          <a href="contact.html" class="active">Contact Us</a>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -158,6 +217,21 @@
       <p>&copy; 2026 Clear AR Services. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    const toggleIcon = document.getElementById('toggleIcon');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      if (navMenu.classList.contains('open')) {
+        toggleIcon.classList.replace('fa-bars', 'fa-xmark');
+      } else {
+        toggleIcon.classList.replace('fa-xmark', 'fa-bars');
+      }
+    });
+  </script>
 
 </body>
 </html>
