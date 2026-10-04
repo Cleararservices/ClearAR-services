@@ -18,22 +18,43 @@
   .nav-brand { color: #fff; font-weight: 800; font-size: 19px; text-decoration: none; display: flex; align-items: center; gap: 10px; }
   .nav-brand img { height: 36px; width: auto; border-radius: 6px; }
 
-  /* Desktop Navigation Links */
-  .nav-menu { display: flex; align-items: center; gap: 20px; }
-  .nav-links { display: flex; gap: 20px; align-items: center; }
-  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.2s; }
+  /* Navigation Links */
+  .nav-menu { display: flex; align-items: center; gap: 18px; }
+  .nav-links { display: flex; gap: 18px; align-items: center; }
+  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; white-space: nowrap; }
   .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  
+  .nav-socials { display: flex; gap: 12px; margin-left: 10px; border-left: 1px solid var(--border-color); padding-left: 16px; }
+  .nav-socials a { color: #fff; background: rgba(255,255,255,0.05); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 13px; }
 
-  /* Mobile Toggle Icon */
+  /* Mobile Toggle */
   .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 22px; cursor: pointer; padding: 4px 8px; }
 
-  .page-header { padding: 70px 20px 40px 20px; text-align: center; background: radial-gradient(circle at center, rgba(14,165,233,0.15) 0%, transparent 70%); }
-  .page-header h1 { font-size: 38px; font-weight: 800; margin: 0 0 15px 0; line-height: 1.2; }
-  .page-header p { color: var(--text-muted); font-size: 17px; max-width: 650px; margin: 0 auto; }
+  .page-header { padding: 65px 20px 35px 20px; text-align: center; background: radial-gradient(circle at center, rgba(14,165,233,0.15) 0%, transparent 70%); }
+  .page-header h1 { font-size: 38px; font-weight: 800; margin: 0 0 12px 0; line-height: 1.2; }
+  .page-header p { color: var(--text-muted); font-size: 16px; max-width: 650px; margin: 0 auto; }
 
   .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+  /* Fast Audit Route Notice */
+  .audit-notice {
+    background: rgba(14, 165, 233, 0.08);
+    border: 1px solid rgba(14, 165, 233, 0.25);
+    border-radius: 12px;
+    padding: 14px 20px;
+    margin: 25px auto 10px auto;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+  }
+  .audit-notice p { margin: 0; font-size: 14px; color: var(--text-main); }
+  .audit-notice p span { color: var(--text-muted); }
+  .audit-notice a { color: var(--accent); font-weight: 700; text-decoration: none; white-space: nowrap; font-size: 14px; }
+  .audit-notice a:hover { text-decoration: underline; }
   
-  .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 35px; margin: 40px 0 70px 0; align-items: start; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 35px; margin: 30px 0 70px 0; align-items: start; }
 
   .contact-info-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; padding: 35px; }
   .contact-info-card h3 { font-size: 21px; margin-top: 0; color: #fff; margin-bottom: 20px; text-align: center; }
@@ -51,6 +72,9 @@
     background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; padding: 35px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.3);
   }
+  .contact-box h3 { margin-top: 0; margin-bottom: 8px; font-size: 22px; color: #fff; }
+  .contact-box p.form-desc { color: var(--text-muted); font-size: 14px; margin-top: 0; margin-bottom: 20px; }
+  
   .form-group { margin-bottom: 18px; }
   .form-group label { display: block; font-weight: 600; font-size: 14px; color: #fff; margin-bottom: 8px; }
   .form-group input, .form-group textarea {
@@ -95,15 +119,21 @@
       align-items: flex-start;
       gap: 14px;
     }
-    .nav-links a { font-size: 17px; width: 100%; padding: 4px 0; }
+    .nav-links a { font-size: 16px; width: 100%; padding: 4px 0; }
 
-    .page-header { padding: 45px 16px 30px 16px; }
+    .page-header { padding: 45px 16px 25px 16px; }
     .page-header h1 { font-size: 28px; }
     .page-header p { font-size: 15px; }
 
+    .audit-notice {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+    }
+
     .contact-grid {
       grid-template-columns: 1fr;
-      margin: 25px 0 50px 0;
+      margin: 20px 0 50px 0;
       gap: 25px;
     }
 
@@ -134,6 +164,7 @@
           <a href="index.html">Home</a>
           <a href="services.html">Services</a>
           <a href="pricing.html">Pricing & FAQs</a>
+          <a href="calculator.html">Leakage Calculator</a>
           <a href="contact.html" class="active">Contact Us</a>
         </div>
       </div>
@@ -142,12 +173,18 @@
 
   <div class="page-header">
     <div class="container">
-      <h1>Connect With Our Experts</h1>
-      <p>Initiate your confidential AR audit consultation or reach out through our official communication channels.</p>
+      <h1>Connect With Our Practice</h1>
+      <p>Reach out directly for general inquiries, compliance questions, or confidential discussions regarding your revenue operations.</p>
     </div>
   </div>
 
   <div class="container">
+    <!-- Notice directing audit applicants to audit.html -->
+    <div class="audit-notice">
+      <p><i class="fa-solid fa-magnifying-glass-chart" style="color: var(--accent); margin-right: 6px;"></i> <strong>Looking to audit 90+ day aged claims?</strong> <span>Use our dedicated qualification queue.</span></p>
+      <a href="audit.html">Apply for Free Audit &rarr;</a>
+    </div>
+
     <div class="contact-grid">
       
       <div class="contact-info-card">
@@ -187,11 +224,15 @@
       </div>
 
       <div class="contact-box">
+        <h3>General Direct Message</h3>
+        <p class="form-desc">Send a direct message to discuss workflows, partnership options, or introductory consults.</p>
+
         <form action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="6269c3ca-f221-46be-914b-99758d4b95a2">
+          <input type="hidden" name="subject" value="New General Inquiry via Contact Page">
           
           <div class="form-group">
-            <label>Practice / Clinic Name</label>
+            <label>Practice / Organization Name</label>
             <input type="text" name="Practice_Name" placeholder="e.g., Metro Medical Clinic" required>
           </div>
           <div class="form-group">
@@ -199,10 +240,10 @@
             <input type="email" name="Email" placeholder="name@practice.com" required>
           </div>
           <div class="form-group">
-            <label>AR Backlog & Audit Details</label>
-            <textarea name="Message" rows="4" placeholder="Briefly describe your 90+ day volume or claim challenges..."></textarea>
+            <label>How Can We Help?</label>
+            <textarea name="Message" rows="4" placeholder="Share your inquiry, question, or discussion topics..." required></textarea>
           </div>
-          <button type="submit" class="btn-submit">Submit Audit Request</button>
+          <button type="submit" class="btn-submit">Send Message</button>
         </form>
       </div>
 
@@ -212,9 +253,11 @@
   <footer>
     <div class="container">
       <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/kiran-kumar-bc" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100038900269769" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="mailto:kiran@cleararservices.com"><i class="fa-solid fa-envelope"></i></a>
       </div>
-      <p>&copy; 2026 Clear AR Services. All rights reserved.</p>
+      <p>&copy; 2026 Clear AR Services. Led by Kiran Kumar BC, MSc. All rights reserved.</p>
     </div>
   </footer>
 
