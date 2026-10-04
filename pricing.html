@@ -18,21 +18,21 @@
   .nav-brand { color: #fff; font-weight: 800; font-size: 19px; text-decoration: none; display: flex; align-items: center; gap: 10px; }
   .nav-brand img { height: 36px; width: auto; border-radius: 6px; }
 
-  /* Desktop Navigation Links */
-  .nav-menu { display: flex; align-items: center; gap: 20px; }
-  .nav-links { display: flex; gap: 20px; align-items: center; }
-  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.2s; }
+  /* Navigation Links */
+  .nav-menu { display: flex; align-items: center; gap: 18px; }
+  .nav-links { display: flex; gap: 18px; align-items: center; }
+  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; white-space: nowrap; }
   .nav-links a:hover, .nav-links a.active { color: var(--accent); }
   
   .nav-socials { display: flex; gap: 12px; margin-left: 10px; border-left: 1px solid var(--border-color); padding-left: 16px; }
   .nav-socials a { color: #fff; background: rgba(255,255,255,0.05); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 13px; }
 
-  /* Mobile Toggle Icon */
+  /* Mobile Toggle */
   .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 22px; cursor: pointer; padding: 4px 8px; }
 
-  .page-header { padding: 70px 20px 40px 20px; text-align: center; background: radial-gradient(circle at center, rgba(14,165,233,0.15) 0%, transparent 70%); }
-  .page-header h1 { font-size: 38px; font-weight: 800; margin: 0 0 15px 0; line-height: 1.2; }
-  .page-header p { color: var(--text-muted); font-size: 17px; max-width: 650px; margin: 0 auto; }
+  .page-header { padding: 65px 20px 35px 20px; text-align: center; background: radial-gradient(circle at center, rgba(14,165,233,0.15) 0%, transparent 70%); }
+  .page-header h1 { font-size: 38px; font-weight: 800; margin: 0 0 12px 0; line-height: 1.2; }
+  .page-header p { color: var(--text-muted); font-size: 16px; max-width: 650px; margin: 0 auto; }
 
   .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
   
@@ -49,10 +49,15 @@
   .btn-custom { background: var(--accent); color: #fff; padding: 12px 24px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 14px; transition: background 0.2s; }
   .btn-custom:hover { background: #0284C7; }
 
+  .btn-audit-cta { display: inline-block; background: var(--accent); color: #fff; padding: 12px 22px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 14px; transition: background 0.2s; margin-top: 10px; }
+  .btn-audit-cta:hover { background: #0284C7; }
+
   .faq-section h2 { font-size: 26px; color: #fff; margin-bottom: 30px; text-align: center; }
   .faq-item { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 14px; padding: 25px; margin-bottom: 20px; }
   .faq-item h4 { margin: 0 0 10px 0; font-size: 18px; color: #fff; }
-  .faq-item p { margin: 0; color: var(--text-muted); font-size: 15px; }
+  .faq-item p { margin: 0; color: var(--text-muted); font-size: 15px; line-height: 1.6; }
+  .faq-item a { color: var(--accent); text-decoration: none; }
+  .faq-item a:hover { text-decoration: underline; }
 
   footer { background: #040812; border-top: 1px solid var(--border-color); padding: 40px 20px; text-align: center; color: var(--text-muted); margin-top: 60px; }
   .footer-socials { display: flex; justify-content: center; gap: 14px; margin-bottom: 16px; }
@@ -84,7 +89,7 @@
       align-items: flex-start;
       gap: 14px;
     }
-    .nav-links a { font-size: 17px; width: 100%; padding: 4px 0; }
+    .nav-links a { font-size: 16px; width: 100%; padding: 4px 0; }
     
     .nav-socials {
       border-left: none;
@@ -95,7 +100,7 @@
       width: 100%;
     }
 
-    .page-header { padding: 45px 16px 30px 16px; }
+    .page-header { padding: 45px 16px 25px 16px; }
     .page-header h1 { font-size: 28px; }
     .page-header p { font-size: 15px; }
 
@@ -111,7 +116,7 @@
     }
 
     .price-tag { font-size: 26px; }
-    .btn-custom { width: 100%; text-align: center; }
+    .btn-custom, .btn-audit-cta { width: 100%; text-align: center; }
 
     .faq-section h2 { font-size: 22px; margin-bottom: 20px; }
     .faq-item { padding: 20px; border-radius: 12px; }
@@ -135,9 +140,11 @@
           <a href="index.html">Home</a>
           <a href="services.html">Services</a>
           <a href="pricing.html" class="active">Pricing & FAQs</a>
+          <a href="calculator.html">Leakage Calculator</a>
           <a href="contact.html">Contact Us</a>
         </div>
         <div class="nav-socials">
+          <a href="https://www.linkedin.com/company/123274048/admin/dashboard/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
           <a href="https://www.facebook.com/profile.php?id=61593741880144" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
         </div>
       </div>
@@ -157,13 +164,14 @@
       <div class="pricing-box">
         <h2>Win-Win Contingency Model</h2>
         <div class="price-tag">0% Upfront Fees</div>
-        <p>Our primary model requires zero retainers. We are compensated strictly on a contingency basis—earning a small percentage only when your recovered revenue is deposited back into your practice. If nothing is recovered, you owe nothing.</p>
+        <p>Our primary model requires zero upfront retainers. We are compensated strictly on a contingency basis—earning a small percentage only when your recovered revenue is deposited back into your practice bank account. If nothing is recovered, you owe nothing.</p>
+        <a href="audit.html" class="btn-audit-cta">Apply for a Contingency Audit &rarr;</a>
       </div>
 
       <div class="custom-pricing-box">
-        <h3>Need Custom Pricing?</h3>
-        <p>Have unique volume requirements or workflow structures?</p>
-        <a href="contact.html" class="btn-custom">Contact Us</a>
+        <h3>Need Custom Terms?</h3>
+        <p>Have unique volume requirements, project-based needs, or custom workflows?</p>
+        <a href="contact.html" class="btn-custom">Contact Directly</a>
       </div>
     </div>
 
@@ -172,22 +180,22 @@
       
       <div class="faq-item">
         <h4>Who handles our patient data and accounts?</h4>
-        <p>Every account is personally handled by Kiran Kumar BC, MSc. There are no offshore teams or third-party automated scripts touching your PHI.</p>
+        <p>Every account is personally audited and appealed by Kiran Kumar BC, MSc. There are zero offshore call centers, subcontractor teams, or generic robotic scripts touching your PHI.</p>
       </div>
 
       <div class="faq-item">
         <h4>What access do you require to our systems?</h4>
-        <p>A temporary, restricted read-only billing user login inside your existing EHR/PM system. No clinical charting permissions and no data exports are ever needed.</p>
+        <p>A temporary, restricted read-only billing login inside your existing EHR/PM platform. We never request clinical charting permissions, administrative root rights, or bulk patient data exports.</p>
       </div>
 
       <div class="faq-item">
         <h4>Is a BAA executed before engagement?</h4>
-        <p>Yes. A legally binding Business Associate Agreement (BAA) is signed prior to any system access, ensuring full HIPAA compliance.</p>
+        <p>Yes. A legally binding Business Associate Agreement (BAA) is signed prior to any system access, guaranteeing full HIPAA compliance and strict data safeguards.</p>
       </div>
 
       <div class="faq-item">
-        <h4>What specialties do you support?</h4>
-        <p>We work across almost all medical specialties, managing complex technical denials and aged receivables for independent clinics of all types.</p>
+        <h4>What specialties do you specialize in?</h4>
+        <p>We primarily focus on procedure-heavy surgical and technical fields where clinical literacy is necessary to challenge medical directors: <strong>Orthopedics & Spine, Dermatology (Mohs), Plastic & Reconstructive Surgery, Cardiology (Cath Lab), and ENT</strong>. You can review detailed appeal strategies on our <a href="specialties.html">Specialties Recovery Hub</a>.</p>
       </div>
     </div>
 
@@ -196,10 +204,11 @@
   <footer>
     <div class="container">
       <div class="footer-socials">
+        <a href="https://www.linkedin.com/company/123274048/admin/dashboard/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
         <a href="https://www.facebook.com/profile.php?id=61593741880144" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="mailto:kiran@cleararservices.com"><i class="fa-solid fa-envelope"></i></a>
       </div>
-      <p>&copy; 2026 Clear AR Services. All rights reserved.</p>
+      <p>&copy; 2026 Clear AR Services. Led by Kiran Kumar BC, MSc. All rights reserved.</p>
     </div>
   </footer>
 
