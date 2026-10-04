@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Specialty A/R Recovery | Clear AR Services</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root {
+    --bg-dark: #070F1E; --bg-card: #0F172A; --accent: #0EA5E9;
+    --text-main: #F8FAFC; --text-muted: #94A3B8; --border-color: rgba(255, 255, 255, 0.08);
+  }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; background: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
+  
+  nav { background: rgba(7, 15, 30, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); padding: 14px 24px; position: sticky; top: 0; z-index: 1000; }
+  .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+  .nav-brand { color: #fff; font-weight: 800; font-size: 19px; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+  .nav-brand img { height: 36px; width: auto; border-radius: 6px; }
+
+  .nav-menu { display: flex; align-items: center; gap: 20px; }
+  .nav-links { display: flex; gap: 20px; align-items: center; }
+  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 22px; cursor: pointer; padding: 4px 8px; }
+
+  .hero { padding: 60px 20px 40px 20px; text-align: center; background: radial-gradient(circle at center, rgba(14,165,233,0.15) 0%, transparent 70%); }
+  .hero h1 { font-size: 38px; font-weight: 800; margin: 0 0 15px 0; color: #fff; }
+  .hero p { color: var(--text-muted); font-size: 17px; max-width: 650px; margin: 0 auto; }
+
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+  /* Interactive Tabs */
+  .specialty-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 40px 0; }
+  .tab-btn { background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-muted); padding: 12px 24px; border-radius: 30px; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 8px; }
+  .tab-btn:hover { border-color: var(--accent); color: #fff; }
+  .tab-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; box-shadow: 0 0 15px rgba(14, 165, 233, 0.4); }
+
+  /* Dynamic Content Panels */
+  .panel { display: none; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; padding: 40px; margin-bottom: 60px; animation: fadeIn 0.4s; }
+  .panel.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+  .panel h2 { font-size: 28px; color: #fff; margin-top: 0; margin-bottom: 12px; }
+  .panel p.lead { color: var(--text-muted); font-size: 16px; margin-bottom: 30px; }
+
+  .denial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 35px; }
+  .denial-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 12px; padding: 22px; }
+  .denial-card h4 { margin: 0 0 10px 0; color: #38BDF8; font-size: 16px; display: flex; align-items: center; gap: 8px; }
+  .denial-card p { margin: 0; color: var(--text-muted); font-size: 14px; line-height: 1.5; }
+
+  .btn-primary { display: inline-block; background: var(--accent); color: #fff; padding: 15px 30px; border-radius: 10px; font-weight: 700; text-decoration: none; text-align: center; transition: 0.2s; }
+  .btn-primary:hover { background: #0284C7; }
+
+  footer { background: #040812; border-top: 1px solid var(--border-color); padding: 40px 20px; text-align: center; color: var(--text-muted); margin-top: 60px; }
+  footer p { margin: 0; font-size: 13px; }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .nav-toggle { display: block; }
+    .nav-menu { display: none; flex-direction: column; width: 100%; background: #0B1426; position: absolute; top: 100%; left: 0; padding: 20px 24px; border-bottom: 1px solid var(--border-color); gap: 15px; z-index: 1000; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+    .nav-menu.open { display: flex; }
+    .nav-links { flex-direction: column; width: 100%; align-items: flex-start; gap: 14px; }
+    .nav-links a { font-size: 17px; width: 100%; padding: 4px 0; }
+    
+    .hero { padding: 45px 16px 30px 16px; }
+    .hero h1 { font-size: 28px; }
+    
+    .specialty-tabs { gap: 8px; margin: 30px 0; }
+    .tab-btn { padding: 10px 16px; font-size: 14px; flex-grow: 1; justify-content: center; }
+    
+    .panel { padding: 25px 20px; }
+    .denial-grid { grid-template-columns: 1fr; }
+    .btn-primary { display: block; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="logo.jpeg" alt="Clear AR Services"> Clear AR Services
+      </a>
+      <button class="nav-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <i class="fa-solid fa-bars" id="toggleIcon"></i>
+      </button>
+      <div class="nav-menu" id="navMenu">
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="pricing.html">Pricing & FAQs</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="container">
+      <h1>Targeted Specialty Recovery</h1>
+      <p>Select your practice specialty below to see how we overturn your most complex clinical denials and aged revenue.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="specialty-tabs">
+      <button class="tab-btn active" onclick="showPanel(event, 'ortho')"><i class="fa-solid fa-bone"></i> Ortho</button>
+      <button class="tab-btn" onclick="showPanel(event, 'derm')"><i class="fa-solid fa-microscope"></i> Derm</button>
+      <button class="tab-btn" onclick="showPanel(event, 'plastic')"><i class="fa-solid fa-syringe"></i> Plastic Surgery</button>
+      <button class="tab-btn" onclick="showPanel(event, 'cardio')"><i class="fa-solid fa-heart-pulse"></i> Cardio</button>
+      <button class="tab-btn" onclick="showPanel(event, 'ent')"><i class="fa-solid fa-ear-deaf"></i> ENT</button>
+    </div>
+
+    <!-- ORTHO PANEL -->
+    <div id="ortho" class="panel active">
+      <h2>Orthopedics & Spine Surgery</h2>
+      <p class="lead">We recover aged orthopedic claims stalled on Modifier 59 edits and complex spine instrumentation denials.</p>
+      <div class="denial-grid">
+        <div class="denial-card">
+          <h4><i class="fa-solid fa-circle-exclamation"></i> Modifier 59 / XS / XU</h4>
+          <p>Overcoming routine automated denials on distinct procedural services, extensive debridements, and multi-compartment procedures.</p>
+        </div>
+        <div class="denial-card">
+          <h4><i class="fa-solid fa-circle-exclamation"></i> Global Period Unbundling</h4>
+          <p>Translating operative notes to legally prove return to the OR (Mod 78) and unrelated procedures within the 90-day global window (Mod 79).</p>
+        </div>
+      </div>
+      <a href="audit.html" class="btn-primary">Apply for an Orthopedic Audit</a>
+    </div>
+
+    <!-- DERM PANEL -->
+    <div id="derm" class="panel">
+      <h2>Dermatology & Mohs Surgery</h2>
+      <p class="lead">Protecting your revenue from complex lesion measurement disputes and same-day E/M bundling.</p>
+      <div class="denial-grid">
+        <div class="denial-card">
+          <h4><i class="fa-solid fa-circle-exclamation"></i> Mohs & Closure Denials</h4>
+          <p>Appealing incorrect bundling of Mohs micrographic stages with adjacent tissue transfers and complex wound closures.</p>
+        </div>
+        <div class="denial-card">
+          <h4><i class="fa-solid fa-circle-exclamation"></i> Modifier 25 Same-Day E/M</h4>
+          <p>Defending significant, separately identifiable evaluation and management services performed on the same day as minor skin procedures.</p>
+        </div>
+      </div>
+      <a href="audit.html" class="btn-primary">Apply for a Dermatology Audit</a>
+    </div>
+
+    <!-- PLASTIC SURGERY PANEL -->
+    <div id="plastic" class="panel">
+      <h2>Plastic & Reconstructive Surgery</h2>
+      <p class="lead">Securing payment for high-dollar reconstructive procedures frequently misclassified as cosmetic.</p>
+      <div class="denial-grid">
+        <div class="denial-card">
+          <h4><i class="fa-solid fa-circle-exclamation"></i> Cosmetic vs. Reconstructive</h4>
+          <p>Leveraging MSc-level clinical literacy to prove medical necessity for breast reconstructions (DIEP flaps), panniculectomies, and scar revisions.</p>
+        </div>
+        <div class="denial-card">
+          <h4><i class="fa-solid fa-circle-exclamation"></i> Multi-Surgeon / Assistant Modifiers</h4>
+          <p>Contesting payer reductions or denials for co-surgeons (Mod 62) and assistant surgeons (Mod 80) on highly complex, prolonged cases.</p>
+        </div>
+      </div>
+      <a href="audit.html" class="btn-primary">Apply for a Plastic Surgery Audit</a>
+    </div>
+
+    <!-- CARDIO PANEL -->
+    <div id="cardio" class="panel">
+      <h2>Cardiology & Interventional Cath</h2>
+      <p class="lead">Overturning diagnostic unbundling and peripheral vascular intervention medical necessity rejections.</p>
+      <div class="denial-grid">
+        <div class="denial-card">
+          <h4><i class="fa-solid fa-circle-exclamation"></i> Cath Lab Unbundling</h4>
+          <p>Fighting hierarchical CPT exclusions when diagnostic catheterizations are improperly bundled into therapeutic interventions.</p>
+        </div>
+        <div class="denial-card">
+          <h4><i class="fa-solid fa-circle-exclamation"></i> Device & Implant LCDs</h4>
+          <p>Crafting peer-to-peer appeal packets grounded in NCD/LCD coverage policies for pacemakers, ICDs, and structural heart devices.</p>
+        </div>
+      </div>
+      <a href="audit.html" class="btn-primary">Apply for a Cardiology Audit</a>
+    </div>
+
+    <!-- ENT PANEL -->
+    <div id="ent" class="panel">
+      <h2>ENT & Otolaryngology</h2>
+      <p class="lead">Recovering lost revenue from functional endoscopic sinus surgeries and complex scope bundling.</p>
+      <div class="denial-grid">
+        <div class="denial-card">
+          <h4><i class="fa-solid fa-circle-exclamation"></i> FESS Unbundling (Modifier 51)</h4>
+          <p>Contesting multiple-procedure payment reductions and incorrect bundling of distinct sinus cavity procedures.</p>
+        </div>
+        <div class="denial-card">
+          <h4><i class="fa-solid fa-circle-exclamation"></i> Diagnostic Scopes vs. Surgical</h4>
+          <p>Appealing denials where payers erroneously merge diagnostic laryngoscopies with subsequent surgical interventions.</p>
+        </div>
+      </div>
+      <a href="audit.html" class="btn-primary">Apply for an ENT Audit</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Clear AR Services. Led by Kiran Kumar BC, MSc. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Tab Switching Logic
+    function showPanel(event, specialty) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.panel').forEach(panel => panel.classList.remove('active'));
+      
+      event.currentTarget.classList.add('active');
+      document.getElementById(specialty).classList.add('active');
+    }
+
+    // Mobile Navigation Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    const toggleIcon = document.getElementById('toggleIcon');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      if (navMenu.classList.contains('open')) {
+        toggleIcon.classList.replace('fa-bars', 'fa-xmark');
+      } else {
+        toggleIcon.classList.replace('fa-xmark', 'fa-bars');
+      }
+    });
+  </script>
+
+</body>
+</html>
