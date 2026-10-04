@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request Free A/R Recovery Audit | Clear AR Services</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root {
+    --bg-dark: #070F1E; --bg-card: #0F172A; --accent: #0EA5E9;
+    --text-main: #F8FAFC; --text-muted: #94A3B8; --border-color: rgba(255, 255, 255, 0.08);
+  }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; background: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
+
+  nav { background: rgba(7, 15, 30, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); padding: 14px 24px; position: sticky; top: 0; z-index: 1000; }
+  .nav-inner { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+  .nav-brand { color: #fff; font-weight: 800; font-size: 19px; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+  .nav-brand img { height: 36px; width: auto; border-radius: 6px; }
+
+  .nav-menu { display: flex; align-items: center; gap: 20px; }
+  .nav-links { display: flex; gap: 20px; align-items: center; }
+  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 22px; cursor: pointer; padding: 4px 8px; }
+
+  .page-header { padding: 60px 20px 30px 20px; text-align: center; background: radial-gradient(circle at center, rgba(14,165,233,0.15) 0%, transparent 70%); }
+  .header-badge { background: rgba(248, 113, 113, 0.15); color: #F87171; border: 1px solid rgba(248, 113, 113, 0.3); padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; margin-bottom: 12px; }
+  .page-header h1 { font-size: 38px; font-weight: 800; margin: 0 0 12px 0; line-height: 1.2; color: #fff; }
+  .page-header p { color: var(--text-muted); font-size: 16px; max-width: 650px; margin: 0 auto; }
+
+  .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+  .audit-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 30px 0 70px 0;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .audit-intro {
+    background: rgba(14, 165, 233, 0.05);
+    border: 1px solid rgba(14, 165, 233, 0.2);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 30px;
+  }
+  .audit-intro p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+  .audit-intro strong { color: #fff; }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 20px;
+  }
+  .form-group { margin-bottom: 22px; }
+  .form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group select {
+    width: 100%;
+    padding: 13px 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+    transition: border-color 0.2s;
+  }
+  .form-group select option {
+    background: var(--bg-card);
+    color: #fff;
+  }
+  .form-group input:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+
+  .radio-card-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .radio-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .radio-card:hover {
+    border-color: var(--accent);
+    background: rgba(14, 165, 233, 0.04);
+  }
+  .radio-card input[type="radio"] {
+    margin-top: 4px;
+    accent-color: var(--accent);
+  }
+  .radio-card span {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+  .radio-card span strong { color: #fff; }
+
+  .btn-submit {
+    display: block;
+    width: 100%;
+    background: var(--accent);
+    color: #fff;
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+    margin-top: 25px;
+  }
+  .btn-submit:hover { background: #0284C7; }
+
+  .security-notice {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 15px;
+  }
+  .security-notice i { color: var(--accent); margin-right: 4px; }
+
+  footer { background: #040812; border-top: 1px solid var(--border-color); padding: 40px 20px; text-align: center; color: var(--text-muted); margin-top: 60px; }
+  footer p { margin: 0; font-size: 13px; }
+
+  @media (max-width: 768px) {
+    .nav-toggle { display: block; }
+    .nav-menu { display: none; flex-direction: column; width: 100%; background: #0B1426; position: absolute; top: 100%; left: 0; padding: 20px 24px; border-bottom: 1px solid var(--border-color); gap: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+    .nav-menu.open { display: flex; }
+    .nav-links { flex-direction: column; width: 100%; align-items: flex-start; gap: 14px; }
+    .nav-links a { font-size: 17px; width: 100%; padding: 4px 0; }
+
+    .page-header { padding: 45px 16px 20px 16px; }
+    .page-header h1 { font-size: 26px; }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .audit-card { padding: 24px 18px; margin: 20px 0 50px 0; }
+  }
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="logo.jpeg" alt="Clear AR Services"> Clear AR Services
+      </a>
+      <button class="nav-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <i class="fa-solid fa-bars" id="toggleIcon"></i>
+      </button>
+      <div class="nav-menu" id="navMenu">
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="pricing.html">Pricing & FAQs</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="container">
+      <span class="header-badge">Limited Solo Bandwidth</span>
+      <h1>Request a Free 90+ Day A/R Audit</h1>
+      <p>Assess your practice's aged trial balance and uncover hidden revenue leakages with zero upfront fees.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="audit-card">
+      <div class="audit-intro">
+        <p><strong>Note:</strong> Due to our hands-on, zero-offshore model, all claims analysis is performed directly by Kiran Kumar BC, MSc. We accept a limited intake of audits per month to maintain clinical depth and turnaround times. Please answer the 3 qualification questions below.</p>
+      </div>
+
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="6269c3ca-f221-46be-914b-99758d4b95a2">
+        <input type="hidden" name="subject" value="New Qualification Intake: Request Free Audit">
+
+        <!-- Practice Info -->
+        <div class="form-row">
+          <div class="form-group">
+            <label>Practice / Clinic Name</label>
+            <input type="text" name="Practice_Name" placeholder="Metro Surgical Group" required>
+          </div>
+          <div class="form-group">
+            <label>Contact Email (Practice Manager)</label>
+            <input type="email" name="Email" placeholder="manager@practice.com" required>
+          </div>
+        </div>
+
+        <!-- Question 1 -->
+        <div class="form-group">
+          <label>1. Approximate total dollar balance in 90+ day aging A/R?</label>
+          <select name="Aging_AR_Volume" required>
+            <option value="" disabled selected>Select estimated aged balance...</option>
+            <option value="Under $50k">Under $50,000</option>
+            <option value="$50,000 - $150,000">$50,000 – $150,000</option>
+            <option value="$150,000 - $500,000">$150,000 – $500,000</option>
+            <option value="$500,000+">$500,000+ (Priority Bandwidth)</option>
+          </select>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="form-group">
+          <label>2. What is your primary medical specialty?</label>
+          <select name="Primary_Specialty" required>
+            <option value="" disabled selected>Select specialty...</option>
+            <option value="Orthopedics / Spine">Orthopedics & Spine</option>
+            <option value="Dermatology / Mohs">Dermatology & Mohs Surgery</option>
+            <option value="Plastic / Reconstructive">Plastic & Reconstructive Surgery</option>
+            <option value="Cardiology / Cath Lab">Cardiology & Cath Lab</option>
+            <option value="ENT / Otolaryngology">ENT & Otolaryngology</option>
+            <option value="Other Surgical / Specialty">Other Medical Specialty</option>
+          </select>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="form-group">
+          <label>3. If approved, are you ready to provide a redacted summary ATB report within 48 hours?</label>
+          <div class="radio-card-group">
+            <label class="radio-card">
+              <input type="radio" name="Readiness_48_Hours" value="Yes - Ready" required>
+              <span><strong>Yes</strong> — Ready to provide redacted data once a mutual BAA is executed.</span>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="Readiness_48_Hours" value="Need Discussion First">
+              <span><strong>Not yet</strong> — We require an introductory discussion on compliance & scope first.</span>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit Application & Check Availability</button>
+        <div class="security-notice">
+          <i class="fa-solid fa-lock"></i> Strict HIPAA Compliance • Business Associate Agreement (BAA) Signed Prior to Any Analysis
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Clear AR Services. Led by Kiran Kumar BC, MSc. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    const toggleIcon = document.getElementById('toggleIcon');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      if (navMenu.classList.contains('open')) {
+        toggleIcon.classList.replace('fa-bars', 'fa-xmark');
+      } else {
+        toggleIcon.classList.replace('fa-xmark', 'fa-bars');
+      }
+    });
+  </script>
+
+</body>
+</html>
